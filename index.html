@@ -1,224 +1,238 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AXAN FRONDA - Perfumes y Velas Artesanales</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AXAN FRONDA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
   <style>
-    /* === ESTILOS DIRECTOS EN EL HTML === */
-
+    /* RESET */
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --crema: #efe8d0;
-      --crema-soft: #e9dec6;
-      --oscuro: #070707;
-      --card: #0f0f0f;
+      --bg: #070707;
+      --text: #efe8d0;
+      --text-muted: #dcd1b4;
+      --card-bg: #111;
+      --accent: #bfae7c;
     }
 
     body {
-      font-family: Georgia, 'Times New Roman', serif;
-      background: var(--oscuro);
-      color: var(--crema);
-      line-height: 1.6;
-      min-height: 100vh;
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Playfair Display', serif;
+      line-height: 1.7;
+      font-size: 17px;
+      -webkit-font-smoothing: antialiased;
     }
 
-    .topnav {
+    header {
+      padding: 30px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 18px 36px;
-      background: rgba(8, 8, 8, 0.95);
       border-bottom: 1px solid #111;
+      background-color: #0a0a0a;
       position: sticky;
       top: 0;
-      z-index: 20;
+      z-index: 100;
     }
 
     .nav-logo {
-      height: 36px;
-      opacity: 0.95;
-      filter: saturate(0.6);
+      height: 50px;
+      opacity: 0.8;
+      filter: saturate(0.5);
     }
 
-    .nav-right {
+    .nav-links {
       list-style: none;
       display: flex;
-      gap: 26px;
-      align-items: center;
-      color: var(--crema);
+      gap: 30px;
       font-size: 0.95rem;
+      color: var(--text-muted);
     }
 
     .hero {
-      text-align: center;
-      padding: 110px 20px 60px;
-      background: linear-gradient(180deg, rgba(8,8,8,1) 0%, rgba(18,18,18,1) 100%);
-    }
-
-    .brand {
       position: relative;
-      display: inline-block;
-      padding: 20px 28px;
-      margin-bottom: 18px;
+      padding: 140px 20px 80px;
+      text-align: center;
+      background: linear-gradient(180deg, #0a0a0a, #0e0e0e);
     }
 
-    .brand::before {
+    .hero::before {
       content: "";
       position: absolute;
       top: 50%;
       left: 50%;
-      width: 320px;
-      height: 320px;
-      background-image: url("images/logo.png");
-      background-repeat: no-repeat;
-      background-position: center;
+      width: 600px;
+      height: 600px;
+      background: url('images/logo.png') no-repeat center;
       background-size: contain;
-      transform: translate(-50%, -52%);
-      opacity: 0.12;
-      z-index: 0;
+      transform: translate(-50%, -50%);
+      opacity: 0.08;
       pointer-events: none;
-      filter: blur(0.5px);
+      filter: blur(0.8px);
     }
 
-    .brand h1 {
+    .hero h1 {
+      font-size: 3.8rem;
+      letter-spacing: 0.3em;
+      font-weight: 400;
       position: relative;
       z-index: 1;
-      font-size: 3.2rem;
-      font-weight: 300;
-      letter-spacing: 0.26em;
-      color: var(--crema);
     }
 
-    .hero-sub {
-      color: var(--crema-soft);
-      max-width: 880px;
-      margin: 14px auto 0;
-      font-size: 1.05rem;
-      padding: 0 18px;
+    .hero p {
+      color: var(--text-muted);
+      max-width: 760px;
+      margin: 20px auto 0;
+      font-size: 1.1rem;
+      font-weight: 400;
+      z-index: 1;
+      position: relative;
     }
 
     .panels {
       display: flex;
       justify-content: center;
-      gap: 40px;
-      padding: 70px 20px 90px;
       flex-wrap: wrap;
+      gap: 40px;
+      padding: 80px 20px;
+      background: #0a0a0a;
     }
 
     .panel {
-      background: var(--card);
       width: 320px;
-      border-radius: 18px;
-      padding: 18px;
-      text-align: center;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
-      transition: transform .28s ease, box-shadow .28s ease;
-      color: var(--crema);
-    }
-
-    .panel:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.7);
+      background: var(--card-bg);
+      border-radius: 14px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      border: 1px solid #181818;
     }
 
     .panel img {
       width: 100%;
-      height: 200px;
+      height: 220px;
       object-fit: cover;
-      border-radius: 12px;
-      margin-bottom: 16px;
-      filter: brightness(0.98);
+      filter: brightness(0.95);
+    }
+
+    .panel-content {
+      padding: 20px;
     }
 
     .panel h3 {
       font-size: 1.2rem;
       margin-bottom: 10px;
-      color: var(--crema);
-      letter-spacing: 0.02em;
+      letter-spacing: 0.05em;
+      color: var(--text);
     }
 
     .panel p {
-      color: var(--crema-soft);
-      margin-bottom: 16px;
-      font-size: 0.98rem;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
     }
 
     .btn {
-      background: transparent;
-      color: var(--crema);
-      border: 1px solid rgba(255, 255, 240, 0.08);
-      padding: 10px 18px;
-      border-radius: 10px;
+      background: none;
+      border: 1px solid #2b2b2b;
+      color: var(--text);
+      padding: 10px 20px;
+      border-radius: 6px;
       cursor: pointer;
-      transition: background .2s ease, transform .12s ease;
-      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.04em;
+      transition: all 0.2s ease;
     }
 
     .btn:hover {
-      background: rgba(255, 255, 230, 0.03);
-      transform: translateY(-3px);
+      background-color: rgba(255, 255, 240, 0.03);
     }
 
     footer {
+      padding: 60px 20px;
       text-align: center;
-      padding: 50px 20px;
-      color: #bfb49a;
+      color: #a09577;
+      font-size: 0.9rem;
+      background: #0a0a0a;
       border-top: 1px solid #111;
-      background: rgba(8,8,8,0.95);
     }
 
-    @media (max-width: 760px) {
-      .brand::before { width: 220px; height: 220px; opacity: 0.10; }
-      .brand h1 { font-size: 2.2rem; letter-spacing: 0.18em; }
-      .panels { gap: 22px; padding: 40px 12px 60px; }
-      .panel { width: 92%; }
-      .hero { padding: 70px 12px; }
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+        letter-spacing: 0.2em;
+      }
+
+      .panel {
+        width: 100%;
+        max-width: 95%;
+      }
+
+      header {
+        flex-direction: column;
+        gap: 14px;
+        padding: 20px;
+      }
+
+      .nav-links {
+        gap: 20px;
+      }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <nav class="topnav">
-      <div class="nav-left">
-        <img src="images/logo.png" alt="Axan Fronda logo" class="nav-logo">
-      </div>
-      <ul class="nav-right">
-        <li>Inicio</li>
-        <li>Fragancias</li>
-        <li>Velas</li>
-        <li>🛒 <span id="cart-count">0</span></li>
-      </ul>
-    </nav>
+    <img src="images/logo.png" alt="Axan Fronda logo" class="nav-logo">
+    <ul class="nav-links">
+      <li>Inicio</li>
+      <li>Fragancias</li>
+      <li>Velas</li>
+      <li>🛒 <span id="cart-count">0</span></li>
+    </ul>
   </header>
 
   <main>
     <section class="hero">
-      <div class="brand">
-        <h1>AXAN FRONDA</h1>
-      </div>
-      <p class="hero-sub">La mejor casa mexicana de perfumes y velas artesanales. Aromas únicos, creados a mano con materias primas seleccionadas y un tacto artesano que respeta la tradición y la elegancia contemporánea.</p>
+      <h1>AXAN FRONDA</h1>
+      <p>Perfumes y velas artesanales elaborados en México. Aromas únicos, procesos lentos, respeto por la tradición. Arte olfativo con identidad fría y elegante.</p>
     </section>
 
     <section class="panels">
-      <article class="panel">
-        <img src="images/perfume.jpg" alt="Fragancias Axan Fronda">
-        <h3>Fragancias artesanales</h3>
-        <p>Cada fragancia está trabajada por manos expertas; composiciones equilibradas, persistentes y con carácter propio.</p>
-        <button class="btn" onclick="addToCart()">Ver catálogo</button>
-      </article>
+      <div class="panel">
+        <img src="images/perfume.jpg" alt="Perfume Axan Fronda">
+        <div class="panel-content">
+          <h3>Fragancias artesanales</h3>
+          <p>Composiciones equilibradas con carácter. Hechas a mano, con esencia propia.</p>
+          <button class="btn" onclick="addToCart()">Ver catálogo</button>
+        </div>
+      </div>
 
-      <article class="panel">
-        <img src="images/vela.jpg" alt="Velas Axan Fronda">
-        <h3>Velas aromáticas</h3>
-        <p>Velas hechas a mano con mezclas olfativas cuidadas para transformar cualquier espacio en un refugio elegante.</p>
-        <button class="btn" onclick="addToCart()">Ver catálogo</button>
-      </article>
+      <div class="panel">
+        <img src="images/vela.jpg" alt="Vela Axan Fronda">
+        <div class="panel-content">
+          <h3>Velas aromáticas</h3>
+          <p>Fusión de aroma y ambiente. Creadas para transformar tus espacios con elegancia.</p>
+          <button class="btn" onclick="addToCart()">Ver catálogo</button>
+        </div>
+      </div>
     </section>
   </main>
 
   <footer>
-    © 2025 AXAN FRONDA
-  </
+    © 2025 AXAN FRONDA · Hecho con calma y carácter.
+  </footer>
+
+  <script>
+    function addToCart() {
+      const el = document.getElementById('cart-count');
+      el.textContent = parseInt(el.textContent) + 1;
+    }
+  </script>
+
+</body>
+</html>
+
