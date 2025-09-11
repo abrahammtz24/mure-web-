@@ -11,7 +11,6 @@
   <header>
     <nav class="topnav">
       <div class="nav-left">
-        <!-- opcional: pequeño logo en la esquina -->
         <img src="images/logo.png" alt="Axan Fronda logo" class="nav-logo">
       </div>
       <ul class="nav-right">
@@ -24,7 +23,6 @@
   </header>
 
   <main>
-    <!-- Hero con marca + logo detrás del título -->
     <section class="hero">
       <div class="brand">
         <h1>AXAN FRONDA</h1>
@@ -32,20 +30,19 @@
       <p class="hero-sub">La mejor casa mexicana de perfumes y velas artesanales. Aromas únicos, creados a mano con materias primas seleccionadas y un tacto artesano que respeta la tradición y la elegancia contemporánea.</p>
     </section>
 
-    <!-- Bloques: Fragancias y Velas -->
     <section class="panels">
       <article class="panel">
         <img src="images/perfume.jpg" alt="Fragancias Axan Fronda">
         <h3>Fragancias artesanales</h3>
         <p>Cada fragancia está trabajada por manos expertas; composiciones equilibradas, persistentes y con carácter propio.</p>
-        <button class="btn" onclick="alert('Ver catálogo de fragancias')">Ver catálogo</button>
+        <button class="btn" onclick="addToCart()">Ver catálogo</button>
       </article>
 
       <article class="panel">
         <img src="images/vela.jpg" alt="Velas Axan Fronda">
         <h3>Velas aromáticas</h3>
         <p>Velas hechas a mano con mezclas olfativas cuidadas para transformar cualquier espacio en un refugio elegante.</p>
-        <button class="btn" onclick="alert('Ver catálogo de velas')">Ver catálogo</button>
+        <button class="btn" onclick="addToCart()">Ver catálogo</button>
       </article>
     </section>
   </main>
@@ -54,12 +51,11 @@
     © 2025 AXAN FRONDA
   </footer>
 
-<script>
-  // demo simple de carrito
-  function addToCart() {
-    const el = document.getElementById('cart-count');
-    el.textContent = parseInt(el.textContent) + 1;
-  }
-</script>
+  <script>
+    function addToCart() {
+      const el = document.getElementById('cart-count');
+      el.textContent = parseInt(el.textContent) + 1;
+    }
+  </script>
 </body>
 </html>
