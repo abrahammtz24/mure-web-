@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>AXAN FRONDA</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
@@ -22,6 +22,7 @@
 
   <main>
     <section class="hero">
+      <img src="images/logo.png" alt="Logo grande" class="hero-logo">
       <h1>AXAN FRONDA</h1>
       <p>Perfumes y velas artesanales elaborados en México. Aromas únicos, procesos lentos, respeto por la tradición. Arte olfativo con identidad fría y elegante.</p>
     </section>
@@ -31,8 +32,8 @@
         <img src="images/perfume.jpg" alt="Perfume Axan Fronda">
         <div class="panel-content">
           <h3>Fragancias artesanales</h3>
-          <p>Composiciones equilibradas con carácter. Hechas a mano, con esencia propia.</p>
-          <button class="btn" onclick="addToCart()">Ver catálogo</button>
+          <p>Composiciones con carácter. Hechas a mano, con esencia propia.</p>
+          <a href="catalogo-fragancias.html" class="btn">Ver catálogo</a>
         </div>
       </div>
 
@@ -40,8 +41,8 @@
         <img src="images/vela.jpg" alt="Vela Axan Fronda">
         <div class="panel-content">
           <h3>Velas aromáticas</h3>
-          <p>Fusión de aroma y ambiente. Creadas para transformar tus espacios con elegancia.</p>
-          <button class="btn" onclick="addToCart()">Ver catálogo</button>
+          <p>Fusión de aroma y ambiente. Transforman tus espacios con elegancia.</p>
+          <a href="catalogo-velas.html" class="btn">Ver catálogo</a>
         </div>
       </div>
     </section>
@@ -51,12 +52,11 @@
     © 2025 AXAN FRONDA · Hecho con calma y carácter.
   </footer>
 
-  <script>
-    function addToCart() {
-      const el = document.getElementById('cart-count');
-      el.textContent = parseInt(el.textContent) + 1;
-    }
-  </script>
-
+<script>
+  function addToCart() {
+    const el = document.getElementById('cart-count');
+    el.textContent = parseInt(el.textContent) + 1;
+  }
+</script>
 </body>
 </html>
