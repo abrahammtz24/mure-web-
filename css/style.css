@@ -1,4 +1,3 @@
-/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -19,7 +18,6 @@ body {
   font-family: 'Playfair Display', serif;
   line-height: 1.7;
   font-size: 17px;
-  -webkit-font-smoothing: antialiased;
 }
 
 header {
@@ -27,17 +25,17 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #111;
   background-color: #0a0a0a;
   position: sticky;
   top: 0;
   z-index: 100;
+  border-bottom: 1px solid #111;
 }
 
 .nav-logo {
   height: 50px;
-  opacity: 0.8;
-  filter: saturate(0.5);
+  opacity: 0.9;
+  filter: saturate(0.6);
 }
 
 .nav-links {
@@ -48,44 +46,36 @@ header {
   color: var(--text-muted);
 }
 
-.hero {
-  position: relative;
-  padding: 140px 20px 80px;
-  text-align: center;
-  background: linear-gradient(180deg, #0a0a0a, #0e0e0e);
+.nav-links li a {
+  color: var(--text-muted);
+  text-decoration: none;
 }
 
-.hero::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 600px;
-  height: 600px;
-  background: url('../images/logo.png') no-repeat center;
-  background-size: contain;
-  transform: translate(-50%, -50%);
-  opacity: 0.08;
-  pointer-events: none;
-  filter: blur(0.8px);
+.hero {
+  text-align: center;
+  padding: 80px 20px 100px;
+  background: linear-gradient(180deg, #0a0a0a, #0e0e0e, #111);
+  position: relative;
+}
+
+.hero-logo {
+  height: 80px;
+  opacity: 0.85;
+  margin-bottom: 20px;
 }
 
 .hero h1 {
-  font-size: 3.8rem;
-  letter-spacing: 0.3em;
+  font-size: 3.4rem;
+  letter-spacing: 0.25em;
   font-weight: 400;
-  position: relative;
-  z-index: 1;
+  margin-bottom: 20px;
 }
 
 .hero p {
   color: var(--text-muted);
   max-width: 760px;
-  margin: 20px auto 0;
+  margin: 0 auto;
   font-size: 1.1rem;
-  font-weight: 400;
-  z-index: 1;
-  position: relative;
 }
 
 .panels {
@@ -93,8 +83,8 @@ header {
   justify-content: center;
   flex-wrap: wrap;
   gap: 40px;
-  padding: 80px 20px;
-  background: #0a0a0a;
+  padding: 100px 20px;
+  background: linear-gradient(180deg, #111, #0a0a0a);
 }
 
 .panel {
@@ -102,8 +92,8 @@ header {
   background: var(--card-bg);
   border-radius: 14px;
   overflow: hidden;
+  border: 1px solid #1a1a1a;
   transition: all 0.3s ease;
-  border: 1px solid #181818;
 }
 
 .panel img {
@@ -138,7 +128,8 @@ header {
   border-radius: 6px;
   cursor: pointer;
   font-size: 0.9rem;
-  letter-spacing: 0.04em;
+  text-decoration: none;
+  display: inline-block;
   transition: all 0.2s ease;
 }
 
@@ -155,6 +146,29 @@ footer {
   border-top: 1px solid #111;
 }
 
+/* Catálogo (más claro pero aún elegante) */
+.catalog-page {
+  background-color: #1a1a1a;
+  color: var(--text-muted);
+}
+
+.catalog {
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.catalog h1 {
+  font-size: 2.5rem;
+  letter-spacing: 0.2em;
+  margin-bottom: 20px;
+  color: var(--text);
+}
+
+.catalog p {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+}
+
 @media (max-width: 768px) {
   .hero h1 {
     font-size: 2.5rem;
@@ -162,13 +176,12 @@ footer {
   }
 
   .panel {
-    width: 100%;
-    max-width: 95%;
+    width: 95%;
   }
 
   header {
     flex-direction: column;
-    gap: 14px;
+    gap: 12px;
     padding: 20px;
   }
 
